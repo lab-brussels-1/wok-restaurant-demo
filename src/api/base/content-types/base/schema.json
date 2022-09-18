@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bases",
+  "info": {
+    "singularName": "base",
+    "pluralName": "bases",
+    "displayName": "base"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "meals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meal.meal",
+      "mappedBy": "base"
+    }
+  }
+}

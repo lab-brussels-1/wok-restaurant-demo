@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "garnitures",
+  "info": {
+    "singularName": "garniture",
+    "pluralName": "garnitures",
+    "displayName": "garniture"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "veggie": {
+      "type": "boolean"
+    },
+    "halal": {
+      "type": "boolean"
+    },
+    "meals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meal.meal",
+      "mappedBy": "garniture"
+    }
+  }
+}

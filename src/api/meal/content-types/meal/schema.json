@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meals",
+  "info": {
+    "singularName": "meal",
+    "pluralName": "meals",
+    "displayName": "meal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "doubleSauce": {
+      "type": "boolean",
+      "required": true
+    },
+    "base": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::base.base",
+      "inversedBy": "meals"
+    },
+    "extras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::extra.extra",
+      "inversedBy": "meals"
+    },
+    "garniture": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::garniture.garniture",
+      "inversedBy": "meals"
+    },
+    "sauce": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sauce.sauce",
+      "inversedBy": "meals"
+    },
+    "size": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::size.size",
+      "inversedBy": "meals"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "meals"
+    }
+  }
+}

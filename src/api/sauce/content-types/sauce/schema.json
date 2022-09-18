@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sauces",
+  "info": {
+    "singularName": "sauce",
+    "pluralName": "sauces",
+    "displayName": "sauce"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "spiciness": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "meals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meal.meal",
+      "mappedBy": "sauce"
+    }
+  }
+}
